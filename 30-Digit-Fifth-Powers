@@ -1,0 +1,28 @@
+#Euler 30
+
+#Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:
+
+#1634 = 14 + 64 + 34 + 44
+#8208 = 84 + 24 + 04 + 84
+#9474 = 94 + 44 + 74 + 44
+#As 1 = 14 is not a sum it is not included.
+
+#The sum of these numbers is 1634 + 8208 + 9474 = 19316.
+
+#Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
+
+sum = 0
+for mil in range(0,10):
+    for h_th in range(0,10):
+        for ten_th in range (0,10):
+            for th in range (0,10):
+                for h in range(0,10):
+                    for ten in range (0,10):
+                        for one in range (0,10):
+                            power = mil **5 + h_th **5 + ten_th ** 5 + th ** 5 + h ** 5 + ten ** 5 + one ** 5
+                            num = 1000000 * mil + 100000*h_th + 10000*ten_th + 1000*th + 100*h + 10*ten + one
+                            if power == num:
+                                sum += num
+                                print num
+
+print "The sum is: {0}".format(sum-1)
