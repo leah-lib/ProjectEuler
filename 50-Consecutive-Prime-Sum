@@ -34,6 +34,8 @@ for a in range (0, len(primes)-1):
     if len(primes)-a < longest:
         break
     for b in range (a+longest, len(primes)):
+        if sum(primes[a:b]) > 1000000:
+            break
         if sum(primes[a:b]) in primes:
                if longest < b-a+1:
                       longest = b-a+1
